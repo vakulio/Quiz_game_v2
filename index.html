@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA/4QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAREREQERAAARERERERAAARAAAAERAAARAAAAEREQABEAAAERARAAEQAAARABEAARAAAAAAEQABEAAAAAARAAEQAAAAABEAARAAAAAAEQABEAAAAAARAAARAAAAARAAAAERERERAAAAABERERAAD//wAA//wAAPgIAADwAQAA5+MAAM/BAADPiQAAz5kAAM/5AADP+QAAz/kAAM/5AADP+QAA5/MAAPAHAAD4DwAA" rel="icon" type="image/x-icon" />
     <title>IT Quiz</title>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -15,8 +16,8 @@
             <option value="jsHTML" selected>HTML, CSS</option>
             <option value="jsQuest">JavaScript</option>
           </select>
-          <a class="btn" data-target="gamePage" href="#" id="playBtn">Играть</a>
-          <a class="btn" data-target="scorePage" href="#">Таблица результатов</a>
+          <a class="btn learn-more" data-target="gamePage" href="#" id="playBtn">Играть</a>
+          <a class="btn learn-more" data-target="scorePage" href="#">Таблица результатов</a>
         </div>
       </div>
       <div class="container" id="gamePage">
@@ -66,20 +67,21 @@
         <div id="highScores" class="flex-center flex-column">
           <h1 id="finalScoreText">Результаты</h1>
           <ul id="highScoresList"></ul>
-          <a class="btn" data-target="startPage" href="#">На главную</a>
+          <a class="btn learn-more" data-target="startPage" href="#">На главную</a>
         </div>
       </div>
       <div class="container" id="endPage">
         <div id="end" class="flex-center flex-column">
+            <h2>Ваш результат:</h2>
             <h1 id="finalScore"></h1>
             <form>
                 <input type="text" name="username" id="username" placeholder="Ваш никнейм">
-                <button type="submit" class="btn" id="saveScoreBtn" disabled>
+                <button type="submit" class="btn learn-more" id="saveScoreBtn" disabled>
                     Сохранить результат
                 </button>
             </form>
-            <a class="btn" data-target="gamePage" href="#">Еще раз</a>
-            <a class="btn" data-target="startPage" href="#">На главную</a>
+            <a class="btn learn-more" data-target="gamePage" href="#">Еще раз</a>
+            <a class="btn learn-more" data-target="startPage" href="#">На главную</a>
         </div>
     </div>
     <script src="./main.js"></script>
