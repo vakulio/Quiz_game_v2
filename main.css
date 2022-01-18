@@ -236,3 +236,12 @@ h1 {
       transform: rotate(360deg);
     }
   }
+
+  @media (max-width: 768px) { 
+    h2 {
+      font-size: 2rem;
+    } 
+  
+  }
+  
+  
