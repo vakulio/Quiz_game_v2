@@ -162,6 +162,7 @@ saveHighScore = (e) => {
     const score = {
       score: finalScore.innerText,
       name: username.value,
+      date: new Date().toJSON(),
     };
     username.value = "";
     postData(
@@ -171,6 +172,8 @@ saveHighScore = (e) => {
     return scorePageBtn.click();
   }
 };
+
+
 
 let resultDask = () => {
   fetch(
@@ -184,7 +187,8 @@ let resultDask = () => {
         let highScores = Object.values(loadedQuestions);
         highScoresList.innerHTML = highScores
           .map((score) => {
-            return `<li class="high-score">${score.name} - ${score.score}</li>`;
+            return `<li class="high-score date-score"> ${new Date(score.date).toLocaleDateString()} ${new Date(score.date).toLocaleTimeString()} </li>
+            <li class="high-score"> Игрок:${score.name} заработал ${score.score} очков. </li>`;
           })
           .join("");
         loader.classList.add("hidden");
