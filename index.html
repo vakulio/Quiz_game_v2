@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Quiz</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+      <div class="container active" id="startPage">
+        <div id="main" class="flex-center flex-column">
+          <h1>IT Quiz</h1>
+          <select name="option" id="option">
+            <option value="jsHTML" selected>HTML, CSS</option>
+            <option value="jsQuest">JavaScript</option>
+          </select>
+          <a class="btn" data-target="gamePage" href="#" id="playBtn">Играть</a>
+          <a class="btn" data-target="scorePage" href="#">Таблица результатов</a>
+        </div>
+      </div>
+      <div class="container" id="gamePage">
+        <div id="loader"></div>
+        <div id="game" class="justify-center flex-column" >
+          <div id="hud">
+            <div id="hud-item">
+              <p class="hud-prefix" id="progressText">
+                Вопрос
+              </p>
+              <div id="progressBar">
+                <div id="progressBarView"></div>
+              </div>
+            </div>
+            <div id="hud-item">
+              <p class="hud-prefix">
+                Счёт
+              </p>
+              <h1 class="hud-main-text" id="score">
+                0
+              </h1>
+            </div>
+          </div>
+          <h2 id="question"></h2>
+          <div class="choice-container">
+            <p class="choice-prefix">A</p>
+            <p class="choice-text" data-num="1"></p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">B</p>
+            <p class="choice-text" data-num="2"></p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">C</p>
+            <p class="choice-text" data-num="3"></p>
+          </div>
+          <div class="choice-container">
+            <p class="choice-prefix">D</p>
+            <p class="choice-text" data-num="4"></p>
+          </div>
+        </div>
+        <audio id="correct-sound" src="./audio/correct-answer-sound.mp3"></audio>
+        <audio id="incorrect-sound" src="./audio/incorrect-answer-sound.mp3"></audio>
+      </div>
+      <div class="container" id="scorePage">
+        <!-- <div id="loader"></div> -->
+        <div id="highScores" class="flex-center flex-column">
+          <h1 id="finalScoreText">Результаты</h1>
+          <ul id="highScoresList"></ul>
+          <a class="btn" data-target="startPage" href="#">На главную</a>
+        </div>
+      </div>
+      <div class="container" id="endPage">
+        <div id="end" class="flex-center flex-column">
+            <h1 id="finalScore"></h1>
+            <form>
+                <input type="text" name="username" id="username" placeholder="Ваш никнейм">
+                <button type="submit" class="btn" id="saveScoreBtn" disabled>
+                    Сохранить результат
+                </button>
+            </form>
+            <a class="btn" data-target="gamePage" href="#">Еще раз</a>
+            <a class="btn" data-target="startPage" href="#">На главную</a>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
