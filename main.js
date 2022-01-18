@@ -17,7 +17,7 @@ availableQuestions = [];
 
 let quesitonsTest = [];
 const bonusPoints = 10;
-const maxNumOfQuestions = 3;
+const maxNumOfQuestions = 5;
 
 const username = document.querySelector("#username"),
   saveScoreBtn = document.getElementById("saveScoreBtn"),
