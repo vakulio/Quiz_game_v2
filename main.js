@@ -17,7 +17,6 @@ availableQuestions = [];
 
 let quesitonsTest = [];
 const bonusPoints = 10;
-const maxNumOfQuestions = 5;
 
 const username = document.querySelector("#username"),
   saveScoreBtn = document.getElementById("saveScoreBtn"),
@@ -60,6 +59,9 @@ function startGame() {
 }
 /* Получаем новый вопрос */
 function getNewQuestion() {
+  let maxNumOfQuestions = document.querySelector(
+    'input[name="radio"]:checked'
+  ).value;
   if (availableQuestions.length === 0 || questionCounter >= maxNumOfQuestions) {
     localStorage.setItem("mostScore", score);
     finalScore.innerText = score;
@@ -172,8 +174,6 @@ saveHighScore = (e) => {
   }
 };
 
-
-
 let resultDask = () => {
   fetch(
     "https://quiz-b65c3-default-rtdb.europe-west1.firebasedatabase.app/leaders.json"
@@ -186,8 +186,14 @@ let resultDask = () => {
         let highScores = Object.values(loadedQuestions);
         highScoresList.innerHTML = highScores
           .map((score) => {
-            return `<li class="high-score date-score"> ${new Date(score.date).toLocaleDateString()} ${new Date(score.date).toLocaleTimeString()} </li>
-            <li class="high-score"> ${score.name} заработал ${score.score} очков. </li>`;
+            return `<li class="high-score date-score"> ${new Date(
+              score.date
+            ).toLocaleDateString()} ${new Date(
+              score.date
+            ).toLocaleTimeString()} </li>
+            <li class="high-score"> ${score.name} заработал ${
+              score.score
+            } очков. </li>`;
           })
           .join("");
         loader.classList.add("hidden");
