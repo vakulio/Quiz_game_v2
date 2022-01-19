@@ -30,6 +30,7 @@ finalScore.innerText = mostRecentScore;
 
 const selectType = document.getElementById("option");
 
+/* Получаем вопросы с сервера */
 function getData() {
   let webPath = selectType.value;
   fetch(
@@ -51,15 +52,13 @@ function getData() {
 getData();
 
 function startGame() {
-  loader.classList.add("hidden");
-  game.classList.remove("hidden");
   questionCounter = 0;
   score = 0;
   scoreText.innerText = score;
   availableQuestions = [...quesitonsTest];
   getNewQuestion();
 }
-
+/* Получаем новый вопрос */
 function getNewQuestion() {
   if (availableQuestions.length === 0 || questionCounter >= maxNumOfQuestions) {
     localStorage.setItem("mostScore", score);
@@ -83,7 +82,7 @@ function getNewQuestion() {
   availableQuestions.splice(newQuestIndex, 1);
   acceptAnswers = true;
 }
-
+/* Проверяем ответ */
 choices.forEach((choice) => {
   choice.addEventListener("click", (e) => {
     if (!acceptAnswers) return;
@@ -188,7 +187,7 @@ let resultDask = () => {
         highScoresList.innerHTML = highScores
           .map((score) => {
             return `<li class="high-score date-score"> ${new Date(score.date).toLocaleDateString()} ${new Date(score.date).toLocaleTimeString()} </li>
-            <li class="high-score"> Игрок:${score.name} заработал ${score.score} очков. </li>`;
+            <li class="high-score"> ${score.name} заработал ${score.score} очков. </li>`;
           })
           .join("");
         loader.classList.add("hidden");

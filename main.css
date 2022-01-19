@@ -265,13 +265,13 @@ h1 {
   .high-score {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
-    
+    border-bottom: thick double #4cc1f0;
   }
 
   .high-score.date-score {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    border-bottom: thick double #4cc1f0;
+    border-bottom: 1px dashed #4cc1f0;
   }
   
   .high-score:hover {
