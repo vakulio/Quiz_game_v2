@@ -40,7 +40,6 @@ function getData() {
     })
     .then((loadedQuestions) => {
       quesitonsTest = loadedQuestions;
-      console.log(quesitonsTest);
       startGame();
     })
     .catch((err) => {
